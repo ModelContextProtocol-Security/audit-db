@@ -1,0 +1,70 @@
+{
+  "repository": {
+    "url": "https://github.com/makenotion/notion-mcp-server",
+    "name": "notion-mcp-server",
+    "owner": "makenotion", 
+    "description": "Official MCP server for Notion API",
+    "primary_language": "TypeScript",
+    "license": "MIT"
+  },
+  "mcp_classification": {
+    "server_type": "data_access_server",
+    "secondary_type": "integration_server",
+    "data_sensitivity": "high",
+    "network_requirements": "external_api",
+    "authentication_required": true
+  },
+  "audit_history": {
+    "total_audits": 1,
+    "last_audit_date": "2025-08-07",
+    "auditors": [
+      {
+        "name": "Kurt Seifried",
+        "github": "kurtseifried", 
+        "organization": "Cloud Security Alliance"
+      }
+    ]
+  },
+  "security_summary": {
+    "current_status": "acceptable_with_hardening",
+    "last_assessment": "2025-08-07",
+    "overall_risk": "medium",
+    "production_ready": true,
+    "hardening_required": true,
+    "critical_issues": 0,
+    "high_issues": 2,
+    "medium_issues": 3,
+    "low_issues": 1,
+    "positive_findings": 2
+  },
+  "deployment_recommendations": {
+    "development": "acceptable_as_is",
+    "staging": "hardening_recommended", 
+    "production": "hardening_required",
+    "enterprise": "additional_controls_required"
+  },
+  "key_security_considerations": [
+    "Credential management and storage",
+    "Network exposure and access controls", 
+    "Input validation for file operations",
+    "Error handling and information disclosure",
+    "Dependency management and monitoring"
+  ],
+  "compliance_status": {
+    "mcp_security_baseline": "partial",
+    "owasp_top_10": "addressed",
+    "supply_chain_security": "good"
+  },
+  "community_notes": {
+    "maintainer_responsiveness": "unknown",
+    "security_contact": "not_specified",
+    "vulnerability_disclosure": "standard_github",
+    "community_feedback": "positive"
+  },
+  "references": {
+    "official_documentation": "https://developers.notion.com/docs/mcp",
+    "security_documentation": "limited",
+    "deployment_guides": "basic"
+  },
+  "last_updated": "2025-08-07T18:30:00Z"
+}

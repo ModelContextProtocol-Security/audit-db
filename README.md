@@ -29,6 +29,221 @@ Every audit entry must provide sufficient detail for independent verification an
 - **Iterative Improvement**: Support for updated audits as servers evolve and improve
 - **Quality Standards**: Consistent standards for audit quality and completeness
 
+## Repository Structure
+
+The audit database uses a hierarchical structure designed for scalability, searchability, and standardization:
+
+```
+audit-db/
+├── audits/
+│   └── [domain]/
+│       └── [org]/
+│           └── [repo]/
+│               ├── metadata.json                     # Repo-level metadata
+│               └── audits/
+│                   ├── [auditor]-[date]-[seq]/      # Individual audit folders
+│                   │   ├── audit-manifest.json      # Standardized metadata
+│                   │   ├── security-assessment.md   # Main report
+│                   │   ├── findings/                # Structured findings
+│                   │   │   ├── high-001-credential-exposure.md
+│                   │   │   ├── medium-002-input-validation.md
+│                   │   │   └── info-003-dependency-analysis.md
+│                   │   ├── artifacts/               # Supporting files
+│                   │   │   ├── code-samples/
+│                   │   │   ├── network-diagrams/
+│                   │   │   └── dependency-tree.json
+│                   │   └── raw-notes.md            # Working notes
+│                   └── [auditor]-[date]-[seq]/     # Additional audits
+├── indexes/
+│   ├── by-auditor.json
+│   ├── by-date.json
+│   ├── by-severity.json
+│   └── by-repo.json
+├── templates/
+│   ├── audit-manifest.schema.json
+│   ├── security-assessment.template.md
+│   └── finding.template.md
+└── tools/
+    ├── generate-index.py
+    └── validate-audit.py
+```
+
+### Path Structure Examples
+
+**GitHub Repository Audit**:
+```
+audits/github.com/makenotion/notion-mcp-server/
+├── metadata.json
+└── audits/
+    ├── kurtseifried-2025-08-07-001/    # First audit on this date
+    ├── kurtseifried-2025-08-07-002/    # Second audit on this date
+    └── automated-scan-2025-08-07-003/  # Automated scan
+```
+
+**Other Source Control Systems**:
+```
+audits/gitlab.com/company/mcp-server/
+audits/bitbucket.org/team/server/
+audits/codeberg.org/user/project/
+```
+
+### Directory Components
+
+#### `/audits/` - Core Audit Data
+- **Hierarchical Organization**: Domain → Organization → Repository → Individual Audits
+- **Version Control Friendly**: Structure supports git operations and branching
+- **Scalable**: Handles growth in audits, auditors, and repositories
+- **Collision-Free**: Sequence numbers prevent conflicts from multiple audits per day
+
+#### `/indexes/` - Discovery and Search
+- **by-auditor.json**: Find all audits by a specific auditor
+- **by-date.json**: Chronological index of all audits
+- **by-severity.json**: Index of findings by severity level
+- **by-repo.json**: Repository-focused view with latest audit status
+- **Generated Automatically**: Tools maintain indexes as audits are added
+
+#### `/templates/` - Standardization
+- **audit-manifest.schema.json**: JSON schema for audit metadata validation
+- **security-assessment.template.md**: Template for main audit reports
+- **finding.template.md**: Standardized finding documentation format
+- **Quality Assurance**: Ensures consistency across all audit submissions
+
+#### `/tools/` - Automation and Validation
+- **generate-index.py**: Rebuilds search indexes from audit data
+- **validate-audit.py**: Validates audit submissions against templates and schemas
+- **Integration Ready**: Scripts support CI/CD integration and quality gates
+
+### Standardized Audit Manifest
+
+Each audit includes a standardized `audit-manifest.json` file:
+
+```json
+{
+  "audit_id": "kurtseifried-2025-08-07-001",
+  "auditor": {
+    "name": "Kurt Seifried", 
+    "github": "kurtseifried",
+    "organization": "Cloud Security Alliance",
+    "contact": "kurt@example.org"
+  },
+  "target": {
+    "repo_url": "https://github.com/makenotion/notion-mcp-server",
+    "commit_hash": "a1b2c3d4e5f67890abcdef1234567890abcdef12",
+    "version": "v1.8.1",
+    "audit_scope": ["security", "architecture", "dependencies"],
+    "audit_depth": "comprehensive"
+  },
+  "audit_metadata": {
+    "start_date": "2025-08-07T10:00:00Z",
+    "completion_date": "2025-08-07T16:30:00Z", 
+    "status": "completed",
+    "audit_type": "manual_security_review",
+    "time_spent_hours": 4.5,
+    "methodology": "MCP Security Framework v1.0"
+  },
+  "findings_summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 3,
+    "low": 1,
+    "info": 2,
+    "total_issues": 8
+  },
+  "tools_used": [
+    "manual_code_review",
+    "dependency_analysis", 
+    "static_analysis",
+    "threat_modeling"
+  ],
+  "compliance_checks": {
+    "mcp_security_baseline": "partial",
+    "owasp_top_10": "addressed",
+    "supply_chain_security": "reviewed"
+  },
+  "references": {
+    "related_audits": [],
+    "external_reports": [],
+    "vulnerability_references": []
+  }
+}
+```
+
+### Structured Finding Format
+
+Individual findings follow a standardized template:
+
+```markdown
+# Finding: [Title]
+
+**Finding ID**: high-001-credential-exposure  
+**Severity**: High  
+**Category**: Authentication & Authorization  
+**CWE**: CWE-798 (Use of Hard-coded Credentials)  
+**CVSS Score**: 7.5 (if applicable)
+
+## Executive Summary
+Brief description suitable for management review.
+
+## Technical Description
+Detailed technical analysis of the security issue.
+
+## Evidence
+- Code snippets
+- Screenshots
+- Log entries
+- Reproduction steps
+
+## Impact Assessment
+- **Confidentiality**: High/Medium/Low
+- **Integrity**: High/Medium/Low  
+- **Availability**: High/Medium/Low
+- **Exploitability**: High/Medium/Low
+- **Scope**: Specific impact scope
+
+## Affected Components
+- File: `src/component.ts` (lines 123-145)
+- Function: `handleAuthentication()`
+- Dependency: `vulnerable-library@1.2.3`
+
+## Reproduction Steps
+1. Step-by-step reproduction instructions
+2. Expected vs actual behavior
+3. Environmental requirements
+
+## Risk Scenarios
+Specific attack scenarios and their potential impact.
+
+## Recommendations
+### Immediate Actions
+- [ ] Priority fixes that should be implemented immediately
+
+### Short-term Improvements
+- [ ] Improvements for next release cycle
+
+### Long-term Strategic Changes
+- [ ] Architectural or process improvements
+
+## Remediation Validation
+Steps to verify that remediation is effective.
+
+## References
+- External security resources
+- Related findings
+- Vendor documentation
+
+## Status Tracking
+- [x] Identified: 2025-08-07
+- [x] Documented: 2025-08-07
+- [ ] Reported to maintainers: 
+- [ ] Acknowledged by maintainers:
+- [ ] Fix available:
+- [ ] Fix verified:
+- [ ] Closed:
+
+## Auditor Notes
+Additional context, assumptions, or limitations of the finding.
+```
+
 ## Audit Entry Requirements
 
 ### Mandatory Components
@@ -73,10 +288,6 @@ Every audit entry must provide sufficient detail for independent verification an
 - **Updates and Revisions**: Revised findings based on community input
 - **Cross-References**: Links to related audits or vulnerability reports
 - **Discussion Links**: References to relevant community discussions
-
-## Repository Structure
-
-**TBD** - Database organization and structure to be determined based on implementation requirements.
 
 ## Process Improvement and Tool Integration
 
