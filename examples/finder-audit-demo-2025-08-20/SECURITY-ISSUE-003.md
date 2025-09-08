@@ -86,7 +86,7 @@ CMD ["sh", "-c", "fastmcp run src/searxng_simple_mcp/server.py --transport ${TRA
 
 **CVSS Base Score:** 4.8/10.0 (Medium)
 
-## AIVSS Factors (Agentic AI Considerations)
+## AIVSS Factors (AI Considerations)
 
 **AI-Specific Risk Factors:**
 - **Persistent Agent Risk (PAR):** Medium (+0.3) - AI agents often run long-term processes

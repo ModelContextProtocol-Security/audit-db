@@ -24,7 +24,7 @@ This security audit was conducted using the MCP Server Security Assessment Frame
 - Input validation and sanitization assessment
 - Supply chain security evaluation
 - Configuration security analysis
-- AIVSS scoring (Agentic AI Vulnerability Scoring System)
+- AIVSS scoring (AI Vulnerability Scoring System)
 
 ## 2. Server Classification & Threat Model
 
@@ -247,7 +247,7 @@ class Settings(BaseSettings):
 
 **Traditional CVSS Base Score:** 3.1/10.0 (Low)
 
-### 6.2 Agentic AI Risk Factors (AARS)
+### 6.2 AI Risk Factors (AARS)
 
 **Agentic Autonomy (AA):** Low (0.2) - Simple search operations only
 **Tool Access Scope (TAS):** Limited (0.1) - Only web search capability

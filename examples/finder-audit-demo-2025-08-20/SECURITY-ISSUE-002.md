@@ -105,7 +105,7 @@ async with httpx.AsyncClient() as client:  # ⚠️ No connection limits
 
 **CVSS Base Score:** 4.3/10.0 (Medium)
 
-## AIVSS Factors (Agentic AI Considerations)
+## AIVSS Factors (AI Considerations)
 
 **AI-Specific Risk Factors:**
 - **Autonomous Amplification (AA):** High (+1.2) - AI agents could generate high-volume automated requests

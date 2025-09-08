@@ -95,7 +95,7 @@ async with httpx.AsyncClient() as client:
 
 **CVSS Base Score:** 3.1/10.0 (Low)
 
-## AIVSS Factors (Agentic AI Considerations)
+## AIVSS Factors (AI Considerations)
 
 **AI-Specific Risk Factors:**
 - **Data Intelligence Harvesting (DIH):** Medium (+0.8) - AI search patterns valuable for intelligence

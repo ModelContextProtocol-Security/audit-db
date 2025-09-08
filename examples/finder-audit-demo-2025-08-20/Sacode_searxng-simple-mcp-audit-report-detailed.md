@@ -231,7 +231,7 @@ Enterprise deployment introduces significant security considerations:
 ### Final Overall Score
 **7.2/10.0 (Good)** - Weighted average across deployment contexts
 
-## AIVSS (Agentic AI Vulnerability Scoring) Analysis
+## AIVSS (AI Vulnerability Scoring System) Analysis
 
 ### AI-Specific Risk Factors Identified
 

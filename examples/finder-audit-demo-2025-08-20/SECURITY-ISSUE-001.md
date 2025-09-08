@@ -81,7 +81,7 @@ An MCP client can request the `server://info` resource to gather intelligence ab
 
 **CVSS Base Score:** 2.4/10.0 (Low)
 
-## AIVSS Factors (Agentic AI Considerations)
+## AIVSS Factors (AI Considerations)
 
 **AI-Specific Risk Factors:**
 - **Agent Reconnaissance (AR):** Medium (+0.3) - AI agents could systematically gather intel

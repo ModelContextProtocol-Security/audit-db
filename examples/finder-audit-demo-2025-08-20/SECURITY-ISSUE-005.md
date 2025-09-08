@@ -90,7 +90,7 @@ except Exception as e:
 
 **CVSS Base Score:** 2.1/10.0 (Low)
 
-## AIVSS Factors (Agentic AI Considerations)
+## AIVSS Factors (AI Considerations)
 
 **AI-Specific Risk Factors:**
 - **Systematic Error Probing (SEP):** Low (+0.3) - AI agents could systematically trigger errors
