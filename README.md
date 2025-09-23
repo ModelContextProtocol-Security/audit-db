@@ -411,6 +411,10 @@ We welcome contributions from the security community, including:
 4. **Submit for Review**: Submit audit for community review and feedback
 5. **Engage with Community**: Respond to feedback and participate in discussions
 
+## Get Involved
+
+Join our community: [GitHub Discussions](https://github.com/orgs/ModelContextProtocol-Security/discussions) • [Slack #mcp channel](https://csaurl.org/mcp-invite) • [Contribute on GitHub](https://github.com/ModelContextProtocol-Security)
+
 ---
 
 *Part of the [Model Context Protocol Security](https://modelcontextprotocol-security.io/) initiative - A Cloud Security Alliance community project.*
