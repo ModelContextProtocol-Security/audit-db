@@ -1,0 +1,81 @@
+{
+  "repository": {
+    "url": "https://github.com/isaacwasserman/mcp-snowflake-server",
+    "name": "mcp-snowflake-server",
+    "owner": "isaacwasserman",
+    "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake",
+    "primary_language": "Python",
+    "license": "MIT"
+  },
+  "mcp_classification": {
+    "server_type": "database_access_server",
+    "secondary_type": "analytics_server",
+    "data_sensitivity": "high",
+    "network_requirements": "external_api",
+    "authentication_required": true
+  },
+  "audit_history": {
+    "total_audits": 1,
+    "last_audit_date": "2026-01-30",
+    "auditors": [
+      {
+        "name": "Aram Panasenco",
+        "github": "panasenco",
+        "organization": "Independent Security Researcher"
+      }
+    ]
+  },
+  "security_summary": {
+    "current_status": "acceptable_with_monitoring",
+    "last_assessment": "2026-01-30",
+    "overall_risk": "low_medium",
+    "production_ready": true,
+    "hardening_required": false,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 2,
+    "low_issues": 1,
+    "positive_findings": 2
+  },
+  "deployment_recommendations": {
+    "development": "recommended",
+    "staging": "acceptable",
+    "production": "acceptable_with_monitoring",
+    "enterprise": "additional_controls_recommended"
+  },
+  "key_security_considerations": [
+    "AI agent safety and manipulation resistance",
+    "Database access scope and permissions management",
+    "Credential security and authentication methods",
+    "Dependency management and supply chain security",
+    "Monitoring and logging for agent actions"
+  ],
+  "compliance_status": {
+    "mcp_security_baseline": "good",
+    "ai_safety_practices": "basic",
+    "supply_chain_security": "standard"
+  },
+  "community_notes": {
+    "maintainer_responsiveness": "active",
+    "security_contact": "github_issues",
+    "vulnerability_disclosure": "standard_github",
+    "community_feedback": "positive",
+    "security_design_quality": "excellent"
+  },
+  "security_strengths": [
+    "Write operations disabled by default - excellent AI safety",
+    "Multiple secure authentication methods including key-pair",
+    "Tool exclusion mechanism for granular control",
+    "Sophisticated SQL write detection",
+    "Flexible access control through exclusion patterns",
+    "Proper session management with expiration",
+    "No hardcoded credentials",
+    "Security-by-default architecture"
+  ],
+  "references": {
+    "official_documentation": "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/README.md",
+    "security_documentation": "configuration_examples",
+    "deployment_guides": "comprehensive"
+  },
+  "last_updated": "2026-01-30T01:30:00Z"
+}

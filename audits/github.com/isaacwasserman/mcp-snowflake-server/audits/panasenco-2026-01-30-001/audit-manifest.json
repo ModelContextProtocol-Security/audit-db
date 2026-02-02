@@ -1,0 +1,91 @@
+{
+  "audit_id": "panasenco-2026-01-30-001",
+  "auditor": {
+    "name": "Aram Panasenco",
+    "github": "panasenco",
+    "organization": "N/A",
+    "contact": "panasenco@users.noreply.github.com"
+  },
+  "target": {
+    "repo_url": "https://github.com/isaacwasserman/mcp-snowflake-server",
+    "commit_hash": "9d6d93c0110d4e91baa8eaa7302de9927feb3036",
+    "version": "0.4.0",
+    "audit_scope": ["security", "architecture", "input_validation", "credential_management", "dependencies"],
+    "audit_depth": "comprehensive"
+  },
+  "audit_metadata": {
+    "start_date": "2026-01-30T00:00:00Z",
+    "completion_date": "2026-01-30T01:30:00Z",
+    "status": "completed",
+    "audit_type": "manual_security_review",
+    "time_spent_hours": 1.5,
+    "methodology": "MCP Security Framework v1.0 + Static Code Analysis + Configuration Review"
+  },
+  "findings_summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 2,
+    "low": 1,
+    "info": 2,
+    "total_issues": 5
+  },
+  "findings_details": {
+    "high_severity": [],
+    "medium_severity": [
+      "medium-001-limited-ai-safety-controls",
+      "medium-002-broad-database-access-scope"
+    ],
+    "low_severity": [
+      "low-001-dependency-management"
+    ],
+    "info_positive": [
+      "info-001-excellent-security-defaults",
+      "info-002-robust-authentication-options"
+    ]
+  },
+  "tools_used": [
+    "manual_code_review",
+    "static_analysis",
+    "configuration_review",
+    "dependency_analysis",
+    "threat_modeling"
+  ],
+  "compliance_checks": {
+    "mcp_security_baseline": "partial",
+    "owasp_top_10": "needs_attention",
+    "supply_chain_security": "basic"
+  },
+  "server_classification": {
+    "primary_type": "database_access_server",
+    "secondary_type": "analytics_server",
+    "data_sensitivity": "high",
+    "network_exposure": "local_only"
+  },
+  "audit_quality": {
+    "confidence_level": "high",
+    "documentation_completeness": "comprehensive",
+    "methodology_rigor": "thorough",
+    "reproducibility": "full"
+  },
+  "artifacts": {
+    "code_samples": "artifacts/write-protection-mechanisms.py",
+    "configuration_analysis": "artifacts/security-configuration-analysis.json",
+    "description": "Comprehensive code samples showing multi-layered write protection and security configuration analysis"
+  },
+  "references": {
+    "related_audits": [],
+    "external_reports": [],
+    "vulnerability_references": [
+      "CWE-285: Improper Authorization",
+      "CWE-250: Execution with Unnecessary Privileges",
+      "CWE-1104: Use of Unmaintained Third Party Components"
+    ],
+    "documentation_reviewed": [
+      "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/README.md",
+      "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/pyproject.toml",
+      "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/src/mcp_snowflake_server/server.py",
+      "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/src/mcp_snowflake_server/write_detector.py",
+      "https://github.com/isaacwasserman/mcp-snowflake-server/blob/main/example_connections.toml"
+    ]
+  }
+}
