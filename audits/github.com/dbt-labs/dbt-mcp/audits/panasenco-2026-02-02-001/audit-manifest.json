@@ -1,0 +1,82 @@
+{
+  "audit_id": "panasenco-2026-02-02-001",
+  "auditor": {
+    "name": "Panasenco",
+    "github": "panasenco",
+    "organization": "Independent",
+    "contact": "github@panasenco.com"
+  },
+  "target": {
+    "repo_url": "https://github.com/dbt-labs/dbt-mcp",
+    "commit_hash": "702bc31aa2eb2491b50b48c0df7e1fda76cd7074",
+    "version": "main",
+    "audit_scope": ["security", "authentication", "input_validation", "dependencies", "command_execution", "data_access"],
+    "audit_depth": "comprehensive"
+  },
+  "audit_metadata": {
+    "start_date": "2026-02-02T04:00:00Z",
+    "completion_date": "2026-02-02T06:30:00Z",
+    "status": "completed",
+    "audit_type": "manual_security_review",
+    "time_spent_hours": 2.5,
+    "methodology": "MCP Security Framework v1.0 + MCP Top 10 Risks Assessment"
+  },
+  "findings_summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 3,
+    "info": 3,
+    "total_issues": 7
+  },
+  "findings_details": {
+    "high_severity": [],
+    "medium_severity": [
+      "medium-001-insufficient-input-validation-and-information-disclosure"
+    ],
+    "low_severity": [
+      "low-001-dependency-pinning",
+      "low-002-broad-token-scopes",
+      "low-003-hardcoded-oauth-client-id"
+    ],
+    "info_positive": [
+      "info-001-secure-token-handling",
+      "info-002-https-communication",
+      "info-003-granular-access-controls"
+    ]
+  },
+  "tools_used": [
+    "manual_code_review",
+    "dependency_analysis",
+    "static_analysis",
+    "authentication_flow_review",
+    "threat_modeling"
+  ],
+  "compliance_checks": {
+    "mcp_security_baseline": "partial",
+    "owasp_top_10": "addressed",
+    "supply_chain_security": "good"
+  },
+  "server_classification": {
+    "primary_type": "data_analytics_server",
+    "secondary_type": "platform_integration_server",
+    "data_sensitivity": "high",
+    "network_exposure": "external_api_dependent"
+  },
+  "audit_quality": {
+    "confidence_level": "high",
+    "documentation_completeness": "comprehensive",
+    "methodology_rigor": "thorough",
+    "reproducibility": "full"
+  },
+  "references": {
+    "related_audits": [],
+    "external_reports": [],
+    "vulnerability_references": [],
+    "documentation_reviewed": [
+      "https://github.com/dbt-labs/dbt-mcp/blob/main/README.md",
+      "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
+      "https://modelcontextprotocol-security.io/top10/server/"
+    ]
+  }
+}

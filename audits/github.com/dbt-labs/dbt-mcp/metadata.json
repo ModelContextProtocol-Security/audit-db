@@ -1,0 +1,69 @@
+{
+  "repository": {
+    "url": "https://github.com/dbt-labs/dbt-mcp",
+    "name": "dbt-mcp",
+    "owner": "dbt-labs",
+    "description": "A MCP (Model Context Protocol) server for interacting with dbt resources",
+    "primary_language": "Python",
+    "license": "Apache-2.0"
+  },
+  "mcp_classification": {
+    "server_type": "data_analytics_server",
+    "secondary_type": "platform_integration_server",
+    "data_sensitivity": "high",
+    "network_requirements": "external_api",
+    "authentication_required": true
+  },
+  "audit_history": {
+    "total_audits": 1,
+    "last_audit_date": "2026-02-02",
+    "auditors": [
+      {
+        "name": "Panasenco",
+        "github": "panasenco",
+        "organization": "Independent"
+      }
+    ]
+  },
+  "security_summary": {
+    "current_status": "production_ready",
+    "last_assessment": "2026-02-02",
+    "overall_risk": "low_medium",
+    "production_ready": true,
+    "hardening_required": false,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 1,
+    "low_issues": 3,
+    "positive_findings": 3
+  },
+  "deployment_recommendations": {
+    "development": "acceptable_as_is",
+    "staging": "acceptable_as_is",
+    "production": "acceptable_with_recommendations",
+    "enterprise": "additional_controls_recommended"
+  },
+  "key_security_considerations": [
+    "Input validation and error message sanitization to prevent AI agent reconnaissance",
+    "Leverage comprehensive tool disabling for least privilege implementation",
+    "OAuth client ID configuration flexibility",
+    "Dependency version management"
+  ],
+  "compliance_status": {
+    "mcp_security_baseline": "partial",
+    "owasp_top_10": "addressed",
+    "supply_chain_security": "good"
+  },
+  "community_notes": {
+    "maintainer_responsiveness": "excellent",
+    "security_contact": "github_issues",
+    "vulnerability_disclosure": "standard_github",
+    "community_feedback": "positive"
+  },
+  "references": {
+    "official_documentation": "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
+    "security_documentation": "limited",
+    "deployment_guides": "comprehensive"
+  },
+  "last_updated": "2026-02-02T06:30:00Z"
+}
